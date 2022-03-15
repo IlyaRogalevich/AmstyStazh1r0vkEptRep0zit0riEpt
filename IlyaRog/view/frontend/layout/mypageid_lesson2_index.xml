@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_IlyaRog::css/nice.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <container name="Amasty_IlyaRog" htmlTag="div">
+                <block name="Amasty_IlyaRog.hello"
+                       class="Amasty\IlyaRog\Block\Hello"
+                       template="Amasty_IlyaRog::hello.phtml">
+                </block>
+                <block name="Amasty_IlyaRog.form"
+                       template="Amasty_IlyaRog::form.phtml">
+                    <block name="Amasty_IlyaRog.futureTaimer"
+                           template="Amasty_IlyaRog::futureTaimer.phtml">
+                    </block>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
