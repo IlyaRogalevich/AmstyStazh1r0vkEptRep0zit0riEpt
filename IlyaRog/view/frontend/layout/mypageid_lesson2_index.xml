@@ -12,6 +12,7 @@
                        template="Amasty_IlyaRog::hello.phtml">
                 </block>
                 <block name="Amasty_IlyaRog.form"
+                       class="Amasty\IlyaRog\Block\Form"
                        template="Amasty_IlyaRog::form.phtml">
                     <block name="Amasty_IlyaRog.futureTaimer"
                            template="Amasty_IlyaRog::futureTaimer.phtml">

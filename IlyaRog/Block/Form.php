@@ -5,7 +5,7 @@ namespace Amasty\IlyaRog\Block;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Template;
 
-class Hello extends Template
+class Form extends Template
 {
     /**
      * @var ScopeConfigInterface
@@ -21,18 +21,13 @@ class Hello extends Template
         parent::__construct($context, $data);
     }
 
-    public function sayHi()
-    {
-        return "hello world";
-    }
-
-    public function getWelcomeText()
-    {
-        return $this->scopeConfig->getValue('test_config/general/welcome_text') ?: '';
-    }
-
     public function qtyShow()
     {
-        return $this->scopeConfig->getValue('test_config/general/show_qty') ?: '';
+        return $this->scopeConfig->getValue('test_config/general/show_qty') ?: " ";
+    }
+
+    public function qtyStandart()
+    {
+        return $this->scopeConfig->getValue('test_config/general/standart_qty') ?: " ";
     }
 }
