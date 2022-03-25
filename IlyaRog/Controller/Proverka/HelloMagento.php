@@ -1,13 +1,9 @@
 <?php
-
 namespace Amasty\IlyaRog\Controller\Proverka;
-
-use Magento\Framework\App\ActionInterface;
-
-class HelloMagento implements ActionInterface
+class HelloMagento extends \Magento\Framework\App\Action\Action
 {
     public function execute()
     {
-        die('Привет Magento. Привет Amasty. Я готов тебя покорить!');
+        print_r('Привет Magento. Привет Amasty. Я готов тебя покорить!');
     }
 }
