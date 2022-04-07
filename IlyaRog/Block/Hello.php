@@ -30,9 +30,4 @@ class Hello extends Template
     {
         return $this->scopeConfig->getValue('test_config/general/welcome_text') ?: '';
     }
-
-    public function qtyShow()
-    {
-        return $this->scopeConfig->getValue('test_config/general/show_qty') ?: '';
-    }
 }

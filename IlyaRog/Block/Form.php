@@ -21,13 +21,13 @@ class Form extends Template
         parent::__construct($context, $data);
     }
 
-    public function qtyShow()
+    public function isShowQty()
     {
-        return $this->scopeConfig->getValue('test_config/general/show_qty') ?: " ";
+        return $this->scopeConfig->isSetFlag('test_config/general/show_qty');
     }
 
-    public function qtyStandart()
+    public function getQtyStandart()
     {
-        return $this->scopeConfig->getValue('test_config/general/standart_qty') ?: " ";
+        return $this->scopeConfig->getValue('test_config/general/standart_qty') ?: "0";
     }
 }

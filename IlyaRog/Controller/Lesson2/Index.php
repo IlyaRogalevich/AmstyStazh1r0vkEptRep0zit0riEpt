@@ -18,6 +18,7 @@ class Index implements ActionInterface
      */
     private $scopeConfig;
 
+
     public function __construct(
         ResultFactory $resultFactory,
         ScopeConfigInterface $scopeConfig

@@ -3,12 +3,14 @@
  * @var \Amasty\IlyaRog\Block\Form $block
  */
 ?>
-<form class="form" id="myformid" action="<?= $block->getUrl('IlyaRog/Check/Check'); ?>" method="post" data-mage-init='{"validation":{"rules": {"required":true}}}'>
+<form class="form" id="myformid" action="<?= $block->getUrl('IlyaRog/Cart/Add'); ?>" method="post" data-mage-init='{"validation":{"rules": {"required":true}}}'>
     <div>
+        <label>SKU: </label>
         <input type="text" name="sku" id="skuid" class="required-entry" />
-        <?php if ($block->qtyShow() == 1): ?>
-            <input type="text" name="qty" id="qtyid" class="required-entry validate-greater-than-zero"  placeholder="<?= $block->qtyStandart() ?>" />
-        <?php else: ?><?php endif; ?>
+        <?php if ($block->isShowQty()): ?>
+        <label>QTY: </label>
+            <input type="text" name="qty" id="qtyid" class="required-entry validate-greater-than-zero"  placeholder="<?= $block->getQtyStandart() ?>" />
+        <?php endif; ?>
         <?= $block->getChildHtml() ?>
         <button>Отправить</button>
     </div>
