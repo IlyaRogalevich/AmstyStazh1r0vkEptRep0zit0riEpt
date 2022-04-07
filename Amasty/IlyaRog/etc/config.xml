@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <test_config>
+            <general>
+                <enabled>1</enabled>
+                <welcome_text>Nec. Velit augue ultrices habitasse, venenatis facilisis risus ligula tempus sem eros risus fusce interdum magnis quis ridiculus torquent commodo orci suspendisse purus lobortis suscipit.</welcome_text>
+                <show_qty>1</show_qty>
+                <standart_qty>45</standart_qty>
+            </general>
+        </test_config>
+    </default>
+</config>
