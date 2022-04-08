@@ -4,9 +4,11 @@
  */
 ?>
 <form class="form" id="myformid" action="<?= $block->getUrl('IlyaRog/Cart/Add'); ?>" method="post" data-mage-init='{"validation":{"rules": {"required":true}}}'>
+    <div data-bind="scope:'skuAutocomplete'">
+    <!-- ko template : getTemplate() -->
+        <!-- /ko -->
+    </div>
     <div>
-        <label>SKU: </label>
-        <input type="text" name="sku" id="skuid" class="required-entry" />
         <?php if ($block->isShowQty()): ?>
         <label>QTY: </label>
             <input type="text" name="qty" id="qtyid" class="required-entry validate-greater-than-zero"  placeholder="<?= $block->getQtyStandart() ?>" />
@@ -15,3 +17,18 @@
         <button>Отправить</button>
     </div>
 </form>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "skuAutocomplete" : {
+                        "component": "Amasty_IlyaRog/js/koAutocomplete",
+                        "template": "Amasty_IlyaRog/koAutocomplete"
+                    }
+                }
+            }
+        }
+    }
+</script>
