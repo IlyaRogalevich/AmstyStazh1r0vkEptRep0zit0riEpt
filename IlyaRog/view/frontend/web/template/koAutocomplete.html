@@ -1,0 +1,9 @@
+<div>
+    <label for="skuid">SKU: </label>
+    <input type="text" name="sku" id="skuid" class="required-entry" data-bind="textInput: searchText" />
+
+    <ul data-bind="foreach: searchResult">
+        <li data-bind="text: $data"></li>
+    </ul>
+</div>
+
