@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--    <type name="Amasty\IlyaRog\Block\Form">-->
+<!--        <plugin name="Amasty_SecondIlyaRog::ChangeAddCart"-->
+<!--                type="Amasty\SecondIlyaRog\Plugin\ChangeAddCart"/>-->
+<!--    </type>-->
+<!--    <type name="Magento\Checkout\Controller\Cart\Add">-->
+<!--        <plugin name="Amasty_SecondIlyaRog::ChangeMagentoAddCart"-->
+<!--                type="Amasty\SecondIlyaRog\Plugin\ChangeMagentoAddCart"/>-->
+<!--    </type>-->
+    <preference for="Amasty\IlyaRog\Controller\Lesson2\Index"
+                type="Amasty\SecondIlyaRog\Controller\Lesson2\Index"/>
+</config>
