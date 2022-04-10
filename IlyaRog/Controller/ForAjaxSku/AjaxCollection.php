@@ -77,25 +77,19 @@ class AjaxCollection implements ActionInterface
 
     public function execute()
     {
-        $sku = $_POST['sku'];
+        $params = $this->request->getParams();
         $response = [];
-        $result = $this->jsonFactory->create();
 
-        $collection = $this->collectionFactory->create();
-        $collection->addAttributeToFilter('sku', ['like' => "%" . $sku . "%"]);
-        $collection->addAttributeToSelect( 'name');
-        $collection->addAttributeToSelect('sku');
-
-        $i=0;
-
+        $collection = $this->collectionFactory->create()
+            ->addAttributeToFilter('sku', ['like' => "%" . $params['sku'] . "%"])
+            ->addAttributeToSelect('name')
+            ->addAttributeToSelect('sku')
+            ->setPageSize(5);
         foreach ($collection as $product) {
-            $i++;
-            if ($i < 6){
-                $product2 = [$product->getData('sku') . " " . $product->getData('name')];
-                $response = array_merge($response, $product2);
-            }
+            $product = $product->getData('sku') . " " . $product->getData('name');
+            $response[] = $product;
         }
-
+        $result = $this->jsonFactory->create();
         return $result->setData($response);
     }
 }

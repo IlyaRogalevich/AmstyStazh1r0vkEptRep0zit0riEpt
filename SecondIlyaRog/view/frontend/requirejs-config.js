@@ -1,8 +1,9 @@
 var config = {
-    map: {
-        '*': {
-            'Amasty_IlyaRog/js/koAutocomplete':
-                'Amasty_SecondIlyaRog/js/koAutocomplete-mapping'
+    config: {
+        mixins: {
+            'Amasty_IlyaRog/js/koAutocomplete': {
+                'Amasty_SecondIlyaRog/js/koAutocomplete-mixin': true
+            }
         }
     }
 };
