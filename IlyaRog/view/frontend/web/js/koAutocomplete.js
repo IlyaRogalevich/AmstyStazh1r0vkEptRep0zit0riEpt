@@ -3,8 +3,8 @@ define(['uiComponent', 'jquery', 'mage/url'], function (Component, $, urlBuilder
         defaults: {
             searchText: '',
             searchResult: [],
-            availableSku: ['24-MB', '24-MB01'],
-            searchUrl: ('ForAjaxSku/AjaxCollection'),
+            minChars: 2,
+            searchUrl: urlBuilder.build('IlyaRog/ForAjaxSku/AjaxCollection'),
             searchResultList: null
         },
         initObservable: function () {
@@ -21,7 +21,7 @@ define(['uiComponent', 'jquery', 'mage/url'], function (Component, $, urlBuilder
         },
         handleAutocomplete: function (searchValue) {
 
-            if (searchValue.length > 2) {
+            if (searchValue.length > this.minChars) {
                 $.ajax({
                     url: this.searchUrl,
                     type: 'POST',
@@ -30,12 +30,7 @@ define(['uiComponent', 'jquery', 'mage/url'], function (Component, $, urlBuilder
                         sku : searchValue
                     }})
                     .done(function (response){
-                        this.availableSku = response;
-
-                        var filteredSearch = this.availableSku.filter(function (item) {
-                                return item.indexOf(searchValue) !== -1;
-                            });
-                        this.searchResult(filteredSearch);
+                        this.searchResult(response);
                     }.bind(this));
             } else {
                 this.searchResult([]);
