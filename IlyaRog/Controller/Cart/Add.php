@@ -9,9 +9,15 @@ use Magento\Checkout\Model\Session;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Message\ManagerInterface;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 
 class Add implements ActionInterface
 {
+    /**
+     * @var EventManager
+     */
+    private $eventManager;
+
     /**
      * @var ResultFactory
      */
@@ -43,12 +49,13 @@ class Add implements ActionInterface
     private $messageManager;
 
     public function __construct(
-        ResultFactory              $resultFactory,
-        ScopeConfigInterface       $scopeConfig,
-        Session                    $checkoutSession,
-        ProductRepositoryInterface $productRepository,
-        RequestInterface           $request,
-        ManagerInterface           $messageManager
+        ResultFactory                             $resultFactory,
+        ScopeConfigInterface                      $scopeConfig,
+        Session                                   $checkoutSession,
+        ProductRepositoryInterface                $productRepository,
+        RequestInterface                          $request,
+        EventManager                              $eventManager,
+        ManagerInterface                          $messageManager
     )
     {
         $this->resultFactory = $resultFactory;
@@ -56,6 +63,7 @@ class Add implements ActionInterface
         $this->checkoutSession = $checkoutSession;
         $this->productRepository = $productRepository;
         $this->request = $request;
+        $this->eventManager = $eventManager;
         $this->messageManager = $messageManager;
     }
 
@@ -64,7 +72,9 @@ class Add implements ActionInterface
 
         $parameters = $this->request->getParams();
         $quote = $this->checkoutSession->getQuote();
-
+        $this->eventManager->dispatch(
+            'amasty_ilyarog_promo_sku'
+        );
 
         try {
             if (!$quote->getId()) {

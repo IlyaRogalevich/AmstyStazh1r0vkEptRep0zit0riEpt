@@ -4,14 +4,16 @@ namespace Amasty\IlyaRog\Block;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Template;
+use Magento\Framework\Event\ManagerInterface;
 
 class Form extends Template
 {
     /**
      * @var ScopeConfigInterface
      */
-
     private $scopeConfig;
+
+    const FORM_ACTION = ('IlyaRog/Cart/Add');
 
     public function __construct(Template\Context $context,
                                 ScopeConfigInterface $scopeConfig,
@@ -30,4 +32,11 @@ class Form extends Template
     {
         return $this->scopeConfig->getValue('test_config/general/standart_qty') ?: "0";
     }
+
+    public function getFormAction()
+    {
+        return self::FORM_ACTION;
+    }
+
+
 }
