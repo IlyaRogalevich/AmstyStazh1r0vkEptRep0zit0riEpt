@@ -19,6 +19,13 @@
                 <field id="forskuid" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>For Sku</label>
                 </field>
+                <field id="emailid" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email</label>
+                </field>
+                <field id="email_templateid" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
             </group>
         </section>
     </system>

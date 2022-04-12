@@ -9,6 +9,6 @@
 <!--        <plugin name="Amasty_SecondIlyaRog::ChangeMagentoAddCart"-->
 <!--                type="Amasty\SecondIlyaRog\Plugin\ChangeMagentoAddCart"/>-->
 <!--    </type>-->
-    <preference for="Amasty\IlyaRog\Controller\Lesson2\Index"
-                type="Amasty\SecondIlyaRog\Controller\Lesson2\Index"/>
+<!--    <preference for="Amasty\IlyaRog\Controller\Lesson2\Index"-->
+<!--                type="Amasty\SecondIlyaRog\Controller\Lesson2\Index"/>-->
 </config>

@@ -1,0 +1,21 @@
+<!--@subject  Amasty SecondIlyaRog Blacklist Notif @-->
+<!--@
+{
+"var blacklist":"Blacklist"
+"var id":"Id"
+"var sku":"Sku"
+"var qty":"Qty"
+"var email_body":"Email Body"
+}
+ @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p>{{trans "Сообщение отправлено с почты %store_email." store_email=$store_email}}</p>
+
+{{layout
+    handle="amasty_secondilyarog_email"
+    blacklist=$blacklist
+}}
+
+{{template config_path="design/email/footer_template"}}
